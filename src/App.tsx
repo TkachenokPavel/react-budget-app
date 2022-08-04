@@ -1,7 +1,10 @@
+import { Title } from "./components/Title/Title";
 
 function App() {
   return (
-    <div></div>
+    <>
+      <Title title='Budget App'></Title>
+    </>
   )
 }
 
