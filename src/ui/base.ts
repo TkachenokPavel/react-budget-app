@@ -11,4 +11,8 @@ const Wrapper = styled.div`
     padding: 30px 20px;
 `;
 
+export const Header = styled.header`
+  width: 100%;
+`;
+
 export { Wrapper }
