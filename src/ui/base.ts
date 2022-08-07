@@ -12,6 +12,9 @@ const Wrapper = styled.div`
 `;
 
 export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+
   width: 100%;
 `;
 
