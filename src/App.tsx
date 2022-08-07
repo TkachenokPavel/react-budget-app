@@ -5,6 +5,7 @@ import { Title } from "./components/Title/Title";
 import { Expenses } from "./components/Expenses/Expenses";
 import { Header, Wrapper } from "./ui/base";
 import { CustomSelect } from "./components/CustomSelect/CustomSelect";
+import { Form } from "./components/Form/Form";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Remaining />
       <Spent />
       <Expenses />
+      <Form />
     </Wrapper>
   )
 }
