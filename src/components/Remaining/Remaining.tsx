@@ -1,14 +1,17 @@
 import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
 import { useRemaining } from '../../hooks/useRemaining';
-import { RemainingValue, StyledRemaining } from './styles'
+import { OverspendingValue, RemainingValue, StyledRemaining } from './styles'
 
 export const Remaining = () => {
     const { currencyOption } = useCurrencyContext();
-    const remaining = useRemaining();
+    const [remaining, isOverspending] = useRemaining();
 
     return (
-        <StyledRemaining>
-            <RemainingValue>Remaining: {currencyOption?.value}{remaining}</RemainingValue>
+        <StyledRemaining $isOverspending={isOverspending}>
+            {!isOverspending
+                ? <RemainingValue>Remaining: {currencyOption?.value}{remaining}</RemainingValue>
+                : <OverspendingValue>Overspending by {currencyOption?.value}{Math.abs(remaining)}</OverspendingValue>
+            }
         </StyledRemaining>
     )
 }
