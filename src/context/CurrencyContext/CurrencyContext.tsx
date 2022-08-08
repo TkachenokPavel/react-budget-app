@@ -1,10 +1,11 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
+import { SingleValue } from "react-select";
 import { Currency } from "../../config/currency";
 import { ICurrencyOption } from "../../types";
 
 interface ICurrencyContext {
-    currencyOption: ICurrencyOption,
-    setCurrencyOption: (value: ICurrencyOption) => void
+    currencyOption: ICurrencyOption | null,
+    setCurrencyOption: (value: ICurrencyOption | null) => void
 }
 
 const CurrencyContext = createContext<ICurrencyContext>({
@@ -12,7 +13,7 @@ const CurrencyContext = createContext<ICurrencyContext>({
         value: Currency.USD,
         label: 'USD'
     },
-    setCurrencyOption: (value: ICurrencyOption) => { }
+    setCurrencyOption: (value: ICurrencyOption | null) => { }
 });
 
 const useCurrencyValue = () => {
@@ -22,7 +23,7 @@ const useCurrencyValue = () => {
                 value: Currency.USD,
                 label: 'USD'
             },
-            setCurrencyOption: (value: ICurrencyOption) => {
+            setCurrencyOption: (value: ICurrencyOption | null) => {
                 setCurrencyValue((actual) => {
                     return {
                         ...actual,
