@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useBudgetContext } from '../../context/BudgetContext/BudgetContext';
 import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
 import { useInput } from '../../hooks/useInput';
 import { BudgetButton, Total, StyledBudget, Input } from './styles'
@@ -6,14 +7,16 @@ import { BudgetButton, Total, StyledBudget, Input } from './styles'
 type ButtonAction = 'Edit' | 'Save';
 
 export const Budget = () => {
+    const { budget, setBudget } = useBudgetContext();
+    const { value, onChange } = useInput(String(budget));
     const { currencyOption } = useCurrencyContext();
     const [buttonAction, setButtonAction] = useState<ButtonAction>('Edit');
-    const { value, onChange } = useInput();
 
     const handleButton = (): void => {
         if (buttonAction === 'Edit') {
             setButtonAction('Save')
         } else {
+            setBudget(Number(value));
             setButtonAction('Edit')
         }
     }
@@ -21,7 +24,7 @@ export const Budget = () => {
     return (
         <StyledBudget>
             {buttonAction === 'Edit' ?
-                <Total>Budget: {currencyOption?.value}3000</Total> :
+                <Total>Budget: {currencyOption?.value}{budget}</Total> :
                 <Input type='number' value={value} onChange={onChange} />
             }
             <BudgetButton data-action={buttonAction} onClick={handleButton}>
