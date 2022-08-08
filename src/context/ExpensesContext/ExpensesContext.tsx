@@ -30,10 +30,8 @@ export const useExpensesValue = () => {
             ],
             setExpense: (value: IExpense) => {
                 setExpensesContext((actual) => ({
-
                     ...actual,
                     expenses: [...actual.expenses, value]
-
                 }))
             },
             deleteExpenses: () => {
