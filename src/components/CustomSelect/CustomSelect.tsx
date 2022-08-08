@@ -12,7 +12,7 @@ export const CustomSelect = () => {
         { value: Currency.GBR, label: 'GBR' },
     ]
 
-    const handleSelect = (newValue: ICurrencyOption | null): void => {
+    const handleSelect = (newValue: SingleValue<ICurrencyOption>): void => {
         setCurrencyOption(newValue)
     }
 
@@ -20,6 +20,7 @@ export const CustomSelect = () => {
         <Select
             options={options}
             isMulti={false}
+            isSearchable={false}
             defaultValue={currencyOption}
             onChange={handleSelect}
         />

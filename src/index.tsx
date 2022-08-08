@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { CurrencyProvider } from './context/CurrencyContext/CurrencyContext';
-import { ExpensesProvider } from './context/ExpensesContext/ExpensesContext';
+import { App } from './App';
+import { AppContextProvider } from './context/AppContext/AppContext';
 import { GlobalStyles } from './ui/GlobalStyles';
 
 const root = ReactDOM.createRoot(
@@ -10,11 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <CurrencyProvider>
-      <ExpensesProvider>
-        <GlobalStyles />
-        <App />
-      </ExpensesProvider>
-    </CurrencyProvider>
+    <AppContextProvider>
+      <GlobalStyles />
+      <App />
+    </AppContextProvider>
   </React.StrictMode>
 );

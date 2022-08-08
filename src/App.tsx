@@ -7,7 +7,7 @@ import { Header, Wrapper } from "./ui/base";
 import { CustomSelect } from "./components/CustomSelect/CustomSelect";
 import { Form } from "./components/Form/Form";
 
-function App() {
+export function App() {
   return (
     <Wrapper>
       <Header>
@@ -22,5 +22,3 @@ function App() {
     </Wrapper>
   )
 }
-
-export default App;

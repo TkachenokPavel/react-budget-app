@@ -4,8 +4,8 @@ import { Currency } from "../../config/currency";
 import { ICurrencyOption } from "../../types";
 
 interface ICurrencyContext {
-    currencyOption: ICurrencyOption | null,
-    setCurrencyOption: (value: ICurrencyOption | null) => void
+    currencyOption: SingleValue<ICurrencyOption>,
+    setCurrencyOption: (value: SingleValue<ICurrencyOption>) => void
 }
 
 const CurrencyContext = createContext<ICurrencyContext>({
@@ -13,7 +13,7 @@ const CurrencyContext = createContext<ICurrencyContext>({
         value: Currency.USD,
         label: 'USD'
     },
-    setCurrencyOption: (value: ICurrencyOption | null) => { }
+    setCurrencyOption: (value: SingleValue<ICurrencyOption>) => { }
 });
 
 const useCurrencyValue = () => {
@@ -23,7 +23,7 @@ const useCurrencyValue = () => {
                 value: Currency.USD,
                 label: 'USD'
             },
-            setCurrencyOption: (value: ICurrencyOption | null) => {
+            setCurrencyOption: (value: SingleValue<ICurrencyOption>) => {
                 setCurrencyValue((actual) => {
                     return {
                         ...actual,

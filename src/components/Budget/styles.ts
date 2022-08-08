@@ -14,14 +14,19 @@ export const StyledBudget = styled.div`
   border-radius: 10px;
 `;
 
-export const BudgetTotal = styled.span`
+export const Total = styled.span`
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.5px;
 `;
 
-export const Button = styled.button`
+export const Input = styled.input`
+  
+`;
+
+export const BudgetButton = styled.button`
+  min-width: 90px;
   padding: 8px 28px;
 
   font-weight: 500;
