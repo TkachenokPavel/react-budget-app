@@ -1,21 +1,16 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react"
+import { IExpense } from "../../types";
 
-interface IExpense {
-    name: string,
-    cost: number,
-    id: string
-}
-
-interface IExpensesContext {
+export interface IExpensesContext {
     expenses: IExpense[],
     setExpense: (value: IExpense) => void,
-    deleteExpenses: () => void
+    deleteExpense: (id: string) => void
 }
 
 const ExpensesContext = createContext<IExpensesContext>({
     expenses: [],
     setExpense: (value: IExpense) => { },
-    deleteExpenses: () => { }
+    deleteExpense: (id: string) => { }
 });
 
 export const useExpensesValue = () => {
@@ -28,10 +23,10 @@ export const useExpensesValue = () => {
                     expenses: [...actual.expenses, value]
                 }))
             },
-            deleteExpenses: () => {
+            deleteExpense: (id: string) => {
                 setExpensesContext(actual => ({
                     ...actual,
-                    expenses: []
+                    expenses: actual.expenses.filter(expense => expense.id !== id)
                 }))
             }
         }
