@@ -106,7 +106,7 @@ export const GlobalStyles = createGlobalStyle`
     input[type=button] {width: auto; overflow: visible;}
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         color: #000;
     }

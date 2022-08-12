@@ -8,7 +8,7 @@ type ButtonAction = 'Edit' | 'Save';
 
 export const Budget = () => {
     const { budget, setBudget } = useBudgetContext();
-    const { value, onChange } = useInput(String(budget));
+    const { value, onChange } = useInput('');
     const { currencyOption } = useCurrencyContext();
     const [buttonAction, setButtonAction] = useState<ButtonAction>('Edit');
 
