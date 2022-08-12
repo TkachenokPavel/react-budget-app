@@ -25,7 +25,11 @@ export const Budget = () => {
         <StyledBudget>
             {buttonAction === 'Edit'
                 ? <Total>Budget: {currencyOption?.value}{budget}</Total>
-                : <Input type='number' value={value} onChange={onChange} />
+                : <Input
+                    type='number'
+                    value={value}
+                    onChange={onChange}
+                    placeholder='Enter budget...' />
             }
             <BudgetButton data-action={buttonAction} onClick={handleButton}>
                 {buttonAction}

@@ -22,7 +22,25 @@ export const Total = styled.span`
 `;
 
 export const Input = styled.input`
-  
+  width: 70%;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+
+  &::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none
+  }
+
+  &:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
 `;
 
 export const BudgetButton = styled.button`
