@@ -4,16 +4,16 @@ import { IExpense } from "../types";
 
 export const useSearch = (): {
     searchExpenses: IExpense[],
-    filterExpenses: (searchRequest: string) => void
+    filterExpenses: (searchValue: string) => void
 } => {
     const { expenses } = useExpensesContext();
     const [searchExpenses, setSearchExpenses] = useState<IExpense[]>(expenses);
 
-    const filterExpenses = (searchRequest: string): void => {
-        if (searchRequest) {
+    const filterExpenses = (searchValue: string): void => {
+        if (searchValue) {
             setSearchExpenses(
                 expenses.filter((expense) =>
-                    expense.name.toLowerCase().match(searchRequest.toLowerCase())
+                    expense.name.toLowerCase().match(searchValue.toLowerCase())
                 )
             );
         } else setSearchExpenses(expenses)

@@ -2,6 +2,7 @@ import Select, { SingleValue } from 'react-select'
 import { Currency } from '../../config/currency'
 import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
 import { ICurrencyOption } from '../../types'
+import { customSelect } from "./styles";
 
 export const CustomSelect = () => {
     const { currencyOption, setCurrencyOption } = useCurrencyContext();
@@ -18,6 +19,7 @@ export const CustomSelect = () => {
 
     return (
         <Select
+            styles={customSelect}
             options={options}
             isMulti={false}
             isSearchable={false}
