@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useExpensesContext } from '../../context';
 import { FormValues } from '../../types';
 import { Title } from '../Title/Title'
-import { StyledForm } from './styles'
+import { Button, InputCost, InputName, StyledForm } from './styles'
 
 export const Form = () => {
     const { register, handleSubmit } = useForm<FormValues>();
@@ -16,14 +16,14 @@ export const Form = () => {
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <Title title='Add Expense' />
-            <input
+            <InputName
                 type="text"
                 placeholder='enter name...'
                 {...register('name', {
                     required: true,
                 })}
             />
-            <input
+            <InputCost
                 type="number"
                 placeholder='enter cost...'
                 {...register('cost', {
@@ -31,7 +31,7 @@ export const Form = () => {
                     valueAsNumber: true
                 })}
             />
-            <button>Done</button>
+            <Button>Done</Button>
         </StyledForm>
     )
 }
