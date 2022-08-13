@@ -1,6 +1,6 @@
 import { IExpense } from '../../types'
 import { ExpenseItem } from '../ExpenseItem/ExpenseItem'
-import { EmptyExpensesList } from './styles'
+import { EmptyExpensesList, StyledList } from './styles'
 
 interface IProps {
     expenses: IExpense[],
@@ -10,7 +10,7 @@ interface IProps {
 export const ExpensesList = ({ expenses, deleteExpense }: IProps) => {
     if (expenses.length) {
         return (
-            <ul>
+            <StyledList>
                 {expenses.map((expense) => {
                     return <ExpenseItem
                         id={expense.id}
@@ -19,7 +19,7 @@ export const ExpensesList = ({ expenses, deleteExpense }: IProps) => {
                         cost={expense.cost}
                         deleteExpense={deleteExpense} />
                 })}
-            </ul >
+            </StyledList >
         )
     }
 
