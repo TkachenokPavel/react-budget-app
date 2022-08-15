@@ -1,7 +1,8 @@
 import { FC, ReactNode } from "react";
-import { BudgetProvider } from "../BudgetContext/BudgetContext";
-import { CurrencyProvider } from "../CurrencyContext/CurrencyContext";
+import { BudgetProvider } from "../BudgetContext";
+import { CurrencyProvider } from "../CurrencyContext";
 import { ExpensesProvider } from "../ExpensesContext";
+
 
 const providers = [CurrencyProvider, ExpensesProvider, BudgetProvider];
 

@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useBudgetContext } from '../../context/BudgetContext/BudgetContext';
-import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
-import { useInput } from '../../hooks/useInput';
-import { BudgetButton, Total, StyledBudget, Input } from './styles'
+import { useState } from "react";
+import { useBudgetContext, useCurrencyContext } from "../../context";
+import { useInput } from "../../hooks";
+import { StyledBudget, Total, Input, BudgetButton } from "./styles";
+
 
 type ButtonAction = 'Edit' | 'Save';
 

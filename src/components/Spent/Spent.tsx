@@ -1,5 +1,5 @@
-import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
-import { useSpent } from '../../hooks/useSpent';
+import { useCurrencyContext } from '../../context'
+import { useSpent } from '../../hooks';
 import { SpentValue, StyledSpent } from './styles'
 
 export const Spent = () => {

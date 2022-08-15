@@ -1,9 +1,10 @@
-import { useExpensesContext } from '../../context'
-import { useSearch } from '../../hooks/useSearch'
-import { ExpensesList } from '../ExpensesList/ExpensesList'
-import { Search } from '../Search/Search'
-import { Title } from '../Title/Title'
-import { StyledExpenses } from './styles'
+import { useExpensesContext } from "../../context";
+import { useSearch } from "../../hooks";
+import { ExpensesList } from "../ExpensesList/ExpensesList";
+import { Search } from "../Search/Search";
+import { Title } from "../Title/Title";
+import { StyledExpenses } from "./styles";
+
 
 export const Expenses = () => {
     const { deleteExpense } = useExpensesContext();

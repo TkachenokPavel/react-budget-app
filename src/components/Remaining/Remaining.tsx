@@ -1,5 +1,5 @@
-import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
-import { useRemaining } from '../../hooks/useRemaining';
+import { useCurrencyContext } from '../../context'
+import { useRemaining } from '../../hooks';
 import { OverspendingValue, RemainingValue, StyledRemaining } from './styles'
 
 export const Remaining = () => {

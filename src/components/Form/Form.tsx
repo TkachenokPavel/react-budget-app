@@ -30,7 +30,7 @@ export const Form = () => {
             />
             {errors.name && "Name is required"}
             <InputCost
-                // type="number"
+                type="number"
                 placeholder='enter cost...'
                 {...register('cost', {
                     required: true,

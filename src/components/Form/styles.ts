@@ -4,12 +4,12 @@ import { StyledSearch } from '../Search/styles';
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   width: 100%;
 `;
 
 export const InputName = styled(StyledSearch)`
-  
 `;
 
 export const InputCost = styled(StyledSearch)`
@@ -34,5 +34,9 @@ export const Button = styled.button`
 
   &:active {
     background: #171d59;
+  }
+
+  @media (min-width: 767px) {
+    width: 50%;
   }
 `;

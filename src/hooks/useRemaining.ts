@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useBudgetContext } from "../context/BudgetContext/BudgetContext";
+import { useBudgetContext } from "../context";
 import { useSpent } from "./useSpent";
 
 export const useRemaining = (): [number, boolean] => {
