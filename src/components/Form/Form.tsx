@@ -1,9 +1,13 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import { useExpensesContext } from '../../context';
-import { FormValues } from '../../types';
 import { Title } from '../Title/Title'
 import { Button, InputCost, InputName, StyledForm } from './styles'
+
+export type FormValues = {
+    name: string,
+    cost: number
+}
 
 export const Form = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();

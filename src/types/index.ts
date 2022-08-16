@@ -5,11 +5,6 @@ export interface ICurrencyOption {
     label: keyof typeof Currency
 }
 
-export type FormValues = {
-    name: string,
-    cost: number
-}
-
 export interface IExpense {
     name: string,
     cost: number,

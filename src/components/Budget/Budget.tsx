@@ -1,29 +1,25 @@
-import { useState } from "react";
 import { useBudgetContext, useCurrencyContext } from "../../context";
-import { useInput } from "../../hooks";
+import { useInput, useToggle } from "../../hooks";
 import { StyledBudget, Total, Input, BudgetButton } from "./styles";
-
-
-type ButtonAction = 'Edit' | 'Save';
 
 export const Budget = () => {
     const { budget, setBudget } = useBudgetContext();
-    const { value, onChange } = useInput('');
     const { currencyOption } = useCurrencyContext();
-    const [buttonAction, setButtonAction] = useState<ButtonAction>('Edit');
+    const { value, onChange } = useInput('');
+    const [isEditMode, toggleEditMode] = useToggle();
 
     const handleButton = (): void => {
-        if (buttonAction === 'Edit') {
-            setButtonAction('Save')
+        if (!isEditMode) {
+            toggleEditMode()
         } else {
             setBudget(Number(value));
-            setButtonAction('Edit')
+            toggleEditMode()
         }
     }
 
     return (
         <StyledBudget>
-            {buttonAction === 'Edit'
+            {!isEditMode
                 ? <Total>Budget: {currencyOption?.value}{budget}</Total>
                 : <Input
                     type='number'
@@ -31,8 +27,10 @@ export const Budget = () => {
                     onChange={onChange}
                     placeholder='Enter budget...' />
             }
-            <BudgetButton data-action={buttonAction} onClick={handleButton}>
-                {buttonAction}
+            <BudgetButton onClick={handleButton}>
+                {!isEditMode
+                    ? 'Edit'
+                    : 'Save'}
             </BudgetButton>
         </StyledBudget>
     )
